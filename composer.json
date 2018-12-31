@@ -1,0 +1,35 @@
+{
+    "name": "zacksleo/yii-gii-tests",
+    "description": "yii gii tests code generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zacksleo",
+            "email": "zacksleo@gmail.com"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.8",
+        "yiisoft/yii2-gii": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "zacksleo\\yii\\gii\\tests\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "zacksleo\\yii\\gii\\tests\tests\\": "tests"
+        }
+    },
+    "repositories": {
+        "asset-packagist": {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
+        }
+      }
+}
