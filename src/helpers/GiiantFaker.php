@@ -58,29 +58,29 @@ class GiiantFaker extends \Faker\Factory
         }
         switch ($type) :
             case self::TYPE_INTEGER:
-            return self::$fakerFactory->randomNumber;
+        return self::$fakerFactory->randomNumber;
         case self::TYPE_NUMBER:
-            return self::$fakerFactory->randomFloat;
+        return self::$fakerFactory->randomFloat;
         case self::TYPE_BOOLEAN:
             return self::$fakerFactory->boolean;
         case self::TYPE_DATE:
             $format = ($format === null) ? self::FORMAT_DATE : $format;
 
-            return self::$fakerFactory->date($format);
+        return self::$fakerFactory->date($format);
         case self::TYPE_TIME:
             $format = ($format === null) ? self::FORMAT_TIME : $format;
 
-            return self::$fakerFactory->time($format);
+        return self::$fakerFactory->time($format);
         case self::TYPE_DATETIME:
             $format = ($format === null) ? self::FORMAT_DATETIME : $format;
 
-            return self::$fakerFactory->dateTime()->format($format);
+        return self::$fakerFactory->dateTime()->format($format);
         case self::TYPE_TIMESTAMP:
             $format = ($format === null) ? self::FORMAT_TIMESTAMP : $format;
 
-            return self::$fakerFactory->dateTime()->format($format);
+        return self::$fakerFactory->dateTime()->format($format);
         default:
-            return self::$fakerFactory->word;
+        return self::$fakerFactory->word;
         endswitch;
     }
 
