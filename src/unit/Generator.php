@@ -151,7 +151,7 @@ class Generator extends yii\gii\generators\model\Generator
     public function generate()
     {
         $files = [];
-       // $relations = $this->generateRelations();
+        // $relations = $this->generateRelations();
         $db = $this->getDbConnection();
         $class = $this->modelClass;
         $classTableNameMethod = 'tableName';
@@ -173,7 +173,7 @@ class Generator extends yii\gii\generators\model\Generator
             ];
             $controllerFile = Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->controllerClass, '\\')) . '.php');
             $files[] = new CodeFile(
-                Yii::getAlias('@app/..'.$this->codeceptionPath.str_replace('\\', '/', $this->ns)).'/'.$this->baseClassPrefix.$className.$this->baseClassSuffix.'UnitTest.php',
+                Yii::getAlias('@app/..' . $this->codeceptionPath . str_replace('\\', '/', $this->ns)) . '/' . $this->baseClassPrefix . $className . $this->baseClassSuffix . 'UnitTest.php',
                 $this->render('unit.php', $params)
             );
         }

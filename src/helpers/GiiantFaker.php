@@ -56,31 +56,31 @@ class GiiantFaker extends \Faker\Factory
         if ($preferredValue !== null) {
             return $preferredValue;
         }
-        switch ($type):
+        switch ($type) :
             case self::TYPE_INTEGER:
-                return self::$fakerFactory->randomNumber;
+            return self::$fakerFactory->randomNumber;
         case self::TYPE_NUMBER:
-                return self::$fakerFactory->randomFloat;
+            return self::$fakerFactory->randomFloat;
         case self::TYPE_BOOLEAN:
-                return self::$fakerFactory->boolean;
+            return self::$fakerFactory->boolean;
         case self::TYPE_DATE:
-                $format = ($format === null) ? self::FORMAT_DATE : $format;
+            $format = ($format === null) ? self::FORMAT_DATE : $format;
 
-        return self::$fakerFactory->date($format);
+            return self::$fakerFactory->date($format);
         case self::TYPE_TIME:
-                $format = ($format === null) ? self::FORMAT_TIME : $format;
+            $format = ($format === null) ? self::FORMAT_TIME : $format;
 
-        return self::$fakerFactory->time($format);
+            return self::$fakerFactory->time($format);
         case self::TYPE_DATETIME:
-                $format = ($format === null) ? self::FORMAT_DATETIME : $format;
+            $format = ($format === null) ? self::FORMAT_DATETIME : $format;
 
-        return self::$fakerFactory->dateTime()->format($format);
+            return self::$fakerFactory->dateTime()->format($format);
         case self::TYPE_TIMESTAMP:
-                $format = ($format === null) ? self::FORMAT_TIMESTAMP : $format;
+            $format = ($format === null) ? self::FORMAT_TIMESTAMP : $format;
 
-        return self::$fakerFactory->dateTime()->format($format);
+            return self::$fakerFactory->dateTime()->format($format);
         default:
-                return self::$fakerFactory->word;
+            return self::$fakerFactory->word;
         endswitch;
     }
 
@@ -96,16 +96,16 @@ class GiiantFaker extends \Faker\Factory
         $fakerValue = null;
         try {
             $fakerValue = self::$fakerFactory->$methodName;
-            switch ($type):
+            switch ($type) :
                 case self::TYPE_INTEGER:
-                    $fakerValue = (int) $fakerValue;
-            break;
+                $fakerValue = (int)$fakerValue;
+                break;
             case self::TYPE_NUMBER:
-                    $fakerValue = (float) $fakerValue;
-            break;
+                $fakerValue = (float)$fakerValue;
+                break;
             default:
-                    $fakerValue = (string) $fakerValue;
-            break;
+                $fakerValue = (string)$fakerValue;
+                break;
             endswitch;
         } catch (\Exception $e) {
             $fakerValue = null;
